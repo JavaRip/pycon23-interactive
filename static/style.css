@@ -1,0 +1,130 @@
+@keyframes GradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 20%; }
+  100% { background-position: 0% 50%; }
+}
+
+:root {
+    --page1-color1: #FFC1E1;
+    --page1-color2: #FF61A6;
+    --page2-color1: #A8E6CF;
+    --page2-color2: #64D3A5;
+    --page3-color1: #DCE9BE;
+    --page3-color2: #A9D88B;
+    --page4-color1: #B5B9F6;
+    --page4-color2: #8F94FB; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-size: 200% 200%;
+    animation: GradientAnimation 15s linear infinite;
+}
+
+h1 {
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+}
+
+h2 {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-align: justify;
+}
+
+p {
+    padding: 2rem 0;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+.page > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: min(90%, 35rem);
+}
+
+button {
+    height: 6rem;
+    width: 18rem;
+    font-size: 1.3rem;
+    background-color: #1c1c1c;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+button:active {
+    background-color: #111;
+}
+
+.page {
+    position: absolute;
+    top: 100%;
+    left: 0; /* Start from the initial position */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease; /* Animate the transition */
+}
+
+.page.active {
+    top: 0;
+}
+
+.page.deactivated {
+    top: -100%;
+}
+
+.page.active.out {
+    transform: translateY(-100%); /* Slide the active page off the top when it has "out" class */
+}
+
+#page1 {
+    background: linear-gradient(45deg, var(--page1-color1), var(--page1-color2));
+    background-size: 400% 400%;
+    animation: GradientAnimation 8s ease infinite;
+}
+
+#page2 {
+    background: linear-gradient(45deg, var(--page2-color1), var(--page2-color2));
+    background-size: 400% 400%;
+    animation: GradientAnimation 8s ease infinite;
+}
+
+#page3 {
+    background: linear-gradient(45deg, var(--page3-color1), var(--page3-color2));
+    background-size: 400% 400%;
+    animation: GradientAnimation 8s ease infinite;
+}
+
+#page4 {
+    background: linear-gradient(45deg, var(--page4-color1), var(--page4-color2));
+    background-size: 400% 400%;
+    animation: GradientAnimation 8s ease infinite;
+}
+
+
+body.loading button {
+    display: none;
+}
+
+body button {
+    display: block;
+}
