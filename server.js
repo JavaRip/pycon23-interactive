@@ -34,16 +34,20 @@ app.post('/reportPrediction', (req, res) => {
   let status;
   if (label === "polluted" && predicted === "polluted") {
     status = "True Positive";
-    console.log(chalk.green(`Prediction Name: ${name}, Status: ${status}`));
+    console.log(chalk.green.bold(`${name}`));
+    console.log(chalk.green(`    ${status}`));
   } else if (label === "polluted" && predicted === "safe") {
     status = "False Negative";
-    console.log(chalk.red(`Prediction Name: ${name}, Status: ${status}`));
+    console.log(chalk.red.bold(`${name}`));
+    console.log(chalk.red(`    ${status}`));
   } else if (label === "safe" && predicted === "polluted") {
     status = "False Positive";
-    console.log(chalk.yellow(`Prediction Name: ${name}, Status: ${status}`));
+    console.log(chalk.yellow.bold(`${name}`));
+    console.log(chalk.yellow(`    ${status}`));
   } else {
     status = "True Negative";
-    console.log(chalk.green(`Prediction Name: ${name}, Status: ${status}`));
+    console.log(chalk.green.bold(`${name}`));
+    console.log(chalk.green(`    ${status}`));
   }
 
   res.send({ message: "Prediction reported successfully", status });
