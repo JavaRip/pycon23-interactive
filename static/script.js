@@ -48,7 +48,7 @@ async function main() {
     let p4Title;
     let p4Subheading;
     let p4Body;
-    switch(PREDICTION.label == PREDICTION.prediction) {
+    switch(PREDICTION.label === PREDICTION.prediction) {
         case true:
             if (PREDICTION.label == 'safe') {
                 p4Title = 'The model predicted correctly 😊👍';
@@ -63,12 +63,12 @@ async function main() {
         case false:
             if (PREDICTION.label == 'safe') {
                 p4Title = 'The model predicted incorrectly 😧';
-                p4Subheading = 'A false negative. Oh no!';
-                p4Body = "The model predicted safe, but the well was actually polluted. If this prediction was created for a real scenario, we would have just told someone  they can't drink from a well which is actually safe. Clean drinking water sources are a key piece of infrastructure and disabling perfectly good sources does real harm."
-            } else {
-                p4Title = 'The model predicted incorrectly 😧';
                 p4Subheading = 'A false positive. Oh no!';
                 p4Body = "The model predicted polluted, but the well was actually safe. If this was a real prediction was applied for a real scenario, we would have just told someone to drink from a well that is pollited to drink from. But, maybe that's okay because 85% of the time this doesn't happen? Being that this example represents your well, how does that make you feel?";
+            } else {
+                p4Title = 'The model predicted incorrectly 😧';
+                p4Subheading = 'A false negative. Oh no!';
+                p4Body = "The model predicted safe, but the well was actually polluted. If this prediction was created for a real scenario, we would have just told someone  they can't drink from a well which is actually safe. Clean drinking water sources are a key piece of infrastructure and disabling perfectly good sources does real harm."
             }
             break;
         

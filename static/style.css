@@ -5,14 +5,10 @@
 }
 
 :root {
-    --page1-color1: #f39bc1;
-    --page1-color2: #FF61A6;
-    --page2-color1: #b6e7d3;
-    --page2-color2: #44be8b;
-    --page3-color1: #c4e4b0;
-    --page3-color2: #76b84d;
-    --page4-color1: #979adb;
-    --page4-color2: #5e63d3; 
+    --page1-color: #FF61A6;
+    --page2-color: #44be8b;
+    --page3-color: #76b84d;
+    --page4-color: #5e63d3; 
 }
 
 * {
@@ -27,6 +23,7 @@ html {
 }
 
 h1 {
+    font-size: 1.7rem;
     padding-bottom: 3rem;
     padding-top: 1rem;
 }
@@ -99,27 +96,19 @@ button:active {
 }
 
 #page1 {
-    background: linear-gradient(45deg, var(--page1-color1), var(--page1-color2), var(--page1-color1));
-    background-size: 200% 200%;
-    animation: GradientAnimation 16s ease-out infinite;
+    background: var(--page1-color);
 }
 
 #page2 {
-    background: linear-gradient(45deg, var(--page2-color1), var(--page2-color2), var(--page2-color1));
-    background-size: 200% 200%;
-    animation: GradientAnimation 16s ease-out infinite;
+    background: var(--page2-color);
 }
 
 #page3 {
-    background: linear-gradient(45deg, var(--page3-color1), var(--page3-color2), var(--page3-color1));
-    background-size: 200% 200%;
-    animation: GradientAnimation 16s ease-out infinite;
+    background: var(--page3-color);
 }
 
 #page4 {
-    background: linear-gradient(45deg, var(--page4-color1), var(--page4-color2), var(--page4-color1));
-    background-size: 200% 200%;
-    animation: GradientAnimation 16s ease-out infinite;
+    background: var(--page4-color);
 }
 
 @keyframes FadeIn {
